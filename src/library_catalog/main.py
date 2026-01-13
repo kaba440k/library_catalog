@@ -5,6 +5,8 @@
 
 from fastapi import FastAPI
 
+from src.library_catalog.core.config import settings
+
 # Создать приложение
 app = FastAPI(
     title="Library Catalog API",
@@ -24,6 +26,12 @@ async def health_check():
     """Health check эндпоинт."""
     return {"status": "healthy"}
 
+
+# print("=== Debug settings ===")
+# print(f"App name:     {settings.app_name}")
+# print(f"Environment:  {settings.environment}")
+# print(f"Debug mode:   {settings.debug}")
+# print(f"DB URL:       {settings.database_url}")
 
 # Для запуска через python -m
 if __name__ == "__main__":
