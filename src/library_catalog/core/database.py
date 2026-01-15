@@ -11,7 +11,7 @@ class Base(DeclarativeBase):
 
 # Создать engine
 engine = create_async_engine(
-    settings.database_url,
+    settings.database_url.unicode_string(),
     pool_size=settings.database_pool_size,
     echo=settings.debug,
 )

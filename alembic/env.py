@@ -21,7 +21,8 @@ config = context.config
 # ⚠️ ВАЖНО: Убираем +asyncpg для alembic, используем postgresql:// вместо postgresql+asyncpg://
 config.set_main_option(
     "sqlalchemy.url",
-    str(settings.database_url).replace("+asyncpg", "")
+    str(settings.database_url)
+    #.replace("+asyncpg", "")
 )
 
 # Interpret the config file for Python logging

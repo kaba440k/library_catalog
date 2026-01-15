@@ -64,7 +64,7 @@ class Book(Base):
         index = True,
     )
     """ISBN (уникальный). Макс. 20 символов. Может быть None."""
-    isbn: Mapped[Optional][str] = mapped_column(
+    isbn: Mapped[Optional[str]] = mapped_column(
         String(20),
         unique=True,
         nullable = True,
@@ -72,13 +72,13 @@ class Book(Base):
         default=None,
     )
     """Описание книги. Неограниченная длина. Может быть None."""
-    description: Mapped[Optional][str] = mapped_column(
+    description: Mapped[Optional[str]] = mapped_column(
         Text,
         nullable=True,
         default = None,
     )
     """Дополнительные данные в JSON. Может быть None."""
-    extra: Mapped[Optional][Dict[str, Any]] = mapped_column(
+    extra: Mapped[Optional[Dict[str, Any]]] = mapped_column(
         JSON,
         nullable = True,
         default = None,
