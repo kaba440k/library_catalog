@@ -34,4 +34,4 @@ class BookMapper:
     @staticmethod
     def to_show_books(books: list[Book]) -> list[ShowBook]:
         """Преобразовать список книг."""
-        return [BookMapper.t_oshow_book(book) for book in books]
+        return [BookMapper.to_show_book(book) for book in books]
